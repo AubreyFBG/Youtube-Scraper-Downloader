@@ -1,13 +1,13 @@
  # 🍭・Youtube Scraper Downloader
 A simple youtube videos and playlists downloader, made using: Express, Ejs, Ytdl-core and a few more...
 
- -  If you want to test the site click on the link: [https://www.npmjs.com/](https://www.npmjs.com/)
+ -  If you want to test the site click on the link: [https://youtube-scraper-downloader.aubreyfbg.repl.co](https://youtube-scraper-downloader.aubreyfbg.repl.co)
 
 ## 🍙・To start the project follow a few simple steps:
 
  1. Clone the project from github using:
 ```
-git clone https://github.com/AubreyFBG/Bot-para-Discord-com-MongoDB.git
+git clone https://github.com/AubreyFBG/Youtube-Scraper-Downloader.git
 ```
  2. Download the required dependencies:
 ```
