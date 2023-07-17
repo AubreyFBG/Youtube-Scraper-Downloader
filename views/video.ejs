@@ -1,0 +1,48 @@
+<%- include("partials/header", { title: "Download Video" }) %>
+
+    <div class="Space">
+        <h1 class="Title">Video Downloader</h1> 
+        <form action="/download/video" method="post">
+            <div class="download-input">
+                <input id="inputVideo" name="video" type="text" placeholder="Link do Video", value=<%= video ? video : '' %>>
+                <button id="searchVideo" disabled="disabled" class="download-button" name="submitButton" value="search" type="submit">Buscar</button>
+              </div>
+              <br>
+              <% if (searchStatus == "error") { %>
+                <div class="errorBox">
+                    <h3>Video não encontrado.</h3>
+                </div>
+              <% } %>
+              <% if (searchStatus == "sucess") { %>
+                <div class="sucessBox">
+                    <iframe src=<%= iframe %> frameborder="0"></iframe>
+                    <div>
+                        <p><%= name %></p>
+                        <p><%= duration %></p>
+                    </div>
+                    <div>
+                        <p>Selecione uma qualidade:</p>
+                        <% formats.forEach(format=>{ %>
+                            <button type="submit" name="submitButton" value=<%= `download}${video}}${format}` %> class="qualityButton"><%= format %></button>
+                        <% }) %>
+                    </div>
+                </div>
+              <% } %>
+              <br>
+        </form>
+    </div>
+<script>
+    const inputField = document.getElementById('inputVideo');
+    const searchVideo = document.getElementById('searchVideo');
+
+    inputField.addEventListener('input', function() {
+    if (inputField.value.trim() !== '') {
+        searchVideo.removeAttribute('disabled');
+    } else {
+        searchVideo.setAttribute('disabled', 'disabled');
+    }
+    });
+    
+</script>
+
+<%- include("partials/footer") %>

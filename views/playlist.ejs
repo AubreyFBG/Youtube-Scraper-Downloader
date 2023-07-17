@@ -1,0 +1,69 @@
+<%- include("partials/header", { title: "Download Playlist" }) %>
+
+    <div class="Space">
+        <h1 class="Title">PLaylist Downloader</h1> 
+        <form action="/download/playlist" method="post">
+            <div class="download-input">
+                <input id="inputPlaylist" name="playlist" type="text" placeholder="Link da playlist", value=<%= playlist ? playlist : '' %>>
+                <button id="searchPlaylist" disabled="disabled" class="download-button" name="submitButton" value="search" type="submit">Buscar</button>
+            </div>
+            <br>
+              <% if (searchStatus == "error") { %>
+                <div class="errorBox">
+                    <h3>PLaylist não encontrada.</h3>
+                </div>
+              <% } %>
+              <% if (searchStatus == "sucess") { %>
+                <div class="sucessBox">
+                    <img src=<%= thumb %> >
+                    <div>
+                        <p><%= title %></p>
+                        <p>Videos: <%= videoCounts %></p>
+                        <p>Tempo: <%= totalMinutes %></p>
+                    </div>
+                    <div>
+                        <p>Selecione uma opção:</p>
+                        <% formats.forEach(format=>{ %>
+                            <button type="submit" name="submitButton" value=<%= `quality}${playlist}}${format}` %> class="qualityButton"><%= format %></button>
+                        <% }) %>
+                    </div>
+                </div>
+              <% } %>
+              <br>
+              <% if (searchVideos == "sucess") { %>
+                <div style="flex-direction: column;" class="sucessBox">
+                    <div  class="videoSection">
+                    <button type="submit" name="submitButton" value=<%= `playlistDownload}${playlist}}${quality}` %> style="width: 120px; height: 50px;" class="qualityButton">Baixar todos</button>
+                    <p>Baixar todos <%= videoCounts %> videos da playlist</p>
+                    </div>
+                    <h2>Lista de videos:</h2>
+                    <% videos.forEach(video=>{%>
+                        <div  class="videoSection">
+                            <button type="submit" name="submitButton" value=<%= `download}${video.link}}${quality}` %> style="width: 80px; height: 50px;" class="qualityButton">Baixar</button>
+                            <img height="50px" width="89px" src=<%= video.thumb %> >
+                            <div class="videosTextSection">
+                                <p><%= video.name %></p>
+                            </div>
+                            <p><%= video.duration %></p>
+                        </div>
+                    <% }) %>
+                </div>
+              <% } %>
+              
+        </form>
+    </div>
+    <script>
+        const inputField = document.getElementById('inputPlaylist');
+        const searchPlaylist = document.getElementById('searchPlaylist');
+    
+        inputField.addEventListener('input', function() {
+        if (inputField.value.trim() !== '') {
+            searchPlaylist.removeAttribute('disabled');
+        } else {
+            searchPlaylist.setAttribute('disabled', 'disabled');
+        }
+        });
+        
+    </script>
+
+<%- include("partials/footer") %>

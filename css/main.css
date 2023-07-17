@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+  background-color: rgba(157, 223, 255, 1);
+  background: linear-gradient(152deg, rgba(255, 157, 231, 1) 0%, rgba(157, 223, 255, 1) 100%);
+  background-attachment: fixed;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  justify-content: left;
+  gap: 65px;
+  padding-top: 30px;
+}
+
+.refs {
+  color: white;
+  font-size: 22px;
+}
+
+.Space {
+  width: 90%;
+  max-width: 780px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+.Title {
+  font-size: 50px;
+}
+
+.primaryButton {
+  display: inline-block;
+  height: 80px;
+  width: 50%;
+  max-width: 225px;
+  border: none;
+  border-radius: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  margin-bottom: 10px;
+  transition: 0.5s;
+}
+
+.primaryButton:hover {
+  cursor: pointer;
+  background-color: #e4e4e4;
+}
+
+.download-input {
+  display: flex;
+  align-items: center;
+}
+
+.download-input input {
+  flex: 1;
+  height: 80px;
+  padding-left: 30px;
+  border-radius: 13px 0px 0px 13px;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.download-input .download-button {
+  padding: 15px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0px 13px 13px 0px;
+  width: 40%;
+  max-width: 130px;
+  height: 82px;
+  font-size: 20px;
+  transition: 0.5s;
+}
+
+.download-input .download-button:hover {
+  background-color: rgb(56, 152, 255);
+  cursor: pointer;
+}
+
+.download-input .download-button:disabled {
+  cursor: not-allowed;
+  background-color: rgb(129, 158, 189);
+}
+
+.sucessBox {
+  display: flex;
+  background-color: rgba(49, 87, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2.5%;
+  gap: 10px;
+}
+
+.errorBox {
+  display: flex;
+  background-color: rgba(255, 49, 49, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2.5%;
+  gap: 10px;
+  animation: pisca 1s 2 alternate;
+}
+
+.qualityButton {
+  background-color: rgba(255, 157, 231, 1);
+  color: white;
+  border-radius: 7px;
+  border: none;
+  padding: 5px;
+}
+
+.qualityButton:hover {
+  cursor: pointer;
+  background-color: rgb(250, 188, 234);
+}
+
+.videoSection {
+  display: flex;
+  height: 50px;
+  border-radius: 10px;
+  flex-direction: row;
+  background-color: rgba(0, 123, 255, 0.5);
+  gap: 15px;
+  padding: 10px;
+  align-items: center;
+}
+
+.videosTextSection {
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+
+@keyframes pisca {
+  from {
+    background-color: rgba(255, 49, 49, 0.5);
+  }
+  50% {
+    background-color: rgba(255, 49, 49, 0.1);
+  }
+  to {
+    background-color: rgba(255, 49, 49, 0.5);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Space {
+    padding-top: 15px;
+  }
+
+  .header {
+    gap: 40px;
+  }
+
+  .Title {
+    font-size: 40px;
+  }
+
+  .sucessBox {
+    flex-direction: column;
+  }
+
+  .primaryButton,
+  .download-input .download-button {
+    width: 100%;
+    max-width: none;
+  }
+}
