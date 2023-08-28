@@ -17,6 +17,10 @@ npm install
 ```
 node .
 ```
+4. Open the project in browser:
+```
+http://localhost:3000/
+```
 ###   Remember If, the node must be installed on the system where the project will be started.
 
 ## 🍬・Project Images:
