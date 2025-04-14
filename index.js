@@ -6,7 +6,7 @@ const zip = require('express-zip');
 const app = express()
 const bodyParser = require('body-parser');
 //Youtube Dependencies
-const ytdl = require('ytdl-core');
+const ytdl = require('@distube/ytdl-core');
 const ytpl = require('ytpl');
 //Audio Video Encode
 const ffmpegPath = require('ffmpeg-static');
@@ -68,7 +68,9 @@ app.post("/download/video", (req, res)=>{
 
 })
 
-app.listen(3000)
+app.listen(3000,()=>{
+    console.log("Projeto ligado na porta 3000")
+})
 
 async function downloadVideo(url, quality, res, downWait){
     const download = new Promise((resolve, reject)=>{
@@ -126,7 +128,7 @@ async function downloadVideo(url, quality, res, downWait){
 }
 
 function renderVideoURL(videoURL, res, addElements = {}){
-    ytdl.getBasicInfo(videoURL).then(video=>{
+    ytdl.getInfo(videoURL).then(video=>{
         video.formats.push({ qualityLabel: "mp3" })
         res.render("video.ejs", {
             video: videoURL,
