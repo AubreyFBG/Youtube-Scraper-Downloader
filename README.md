@@ -1,35 +1,25 @@
-# 🌈・Discord Bot Dynamic Page  
-A dynamic Discord bot page generator that adapts its layout and colors based on the bot’s avatar. Built using: Express, Ejs, node-vibrant, Discord.js and more...
+ # 🍭・Youtube Scraper Downloader
+A simple youtube videos and playlists downloader, made using: Express, Ejs, Ytdl-core and a few more...
 
-## 🧩・To start the project follow a few simple steps:
+## 🍙・To start the project follow a few simple steps:
 
-1. Clone the project from github using:  
-```
-git clone https://github.com/AubreyFBG/Discord-Bot-Dynamic-Page.git
-```
+ 1. Clone the project from github using:
+git clone https://github.com/AubreyFBG/Youtube-Scraper-Downloader.git
 
-2. Download the required dependencies:  
-```
+ 2. Download the required dependencies:
 npm install
-```
 
-3. Start project:  
-```
+ 3. Start project:
 node .
-```
 
-4. Open the project in browser:  
-```
-http://localhost:8080/
-```
+4. Open the project in browser:
+http://localhost:3000/
 
-###   Remember: Node must be installed on the system where the project will be started.
-## 🍥・Project preview: 
-![ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/7f26ac99-ad5a-43fe-9d5f-25ebea4d9464)
+###   Remember If, the node must be installed on the system where the project will be started.
 
-## 🎨・Project Images:  
-![Bot Page Example](https://github.com/user-attachments/assets/4454c3ab-1e1a-4452-a5a5-f8a380b3c49e)
+## 🍬・Project Images:
+![Home Screen](https://github.com/user-attachments/assets/9975847d-59f6-4f69-aee7-529f90fc1427)
 
-![Dynamic Color Theme](https://github.com/user-attachments/assets/dce7071d-23cb-43fa-a7d3-2ddedf9da9c8)
+![Playlist Download Screen](https://github.com/user-attachments/assets/e0ffe71f-ace6-4af7-a11e-1a2ce95000bf)
 
-![image](https://github.com/user-attachments/assets/8d980f19-99bf-466f-9540-e8f25b575598)
+![Video Download Screen](https://github.com/user-attachments/assets/68c054e3-778c-4d83-ac72-4e8c7d61f771)
